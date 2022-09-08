@@ -11,11 +11,11 @@ var maxProfit = function(prices) {
             min = p; 
             continue;
         } 
-        if (p > min) {
-            max = Math.max( max, p - min );
-        } else {
-            min = Math.min( p, min )    
-        }
+        if (p < min) {
+            min = p
+        } 
+
+        max = Math.max( max, p - min );
     }
     return max
 }
