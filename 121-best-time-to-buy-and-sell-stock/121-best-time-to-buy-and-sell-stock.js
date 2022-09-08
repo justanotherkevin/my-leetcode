@@ -4,17 +4,10 @@
  */
 var maxProfit = function(prices) {
     let max = 0;
-    let min = null
+    let min = prices[0]
  
     for (let p of prices) {
-        if (min === null) {
-            min = p; 
-            continue;
-        } 
-        if (p < min) {
-            min = p
-        } 
-
+        if (p < min)  min = p;
         max = Math.max( max, p - min );
     }
     return max
